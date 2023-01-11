@@ -8,10 +8,44 @@
 import Foundation
 
 
+enum HttpMethod {
+    case get
+    case post(Data)
+    
+    func getPostDat() -> Data? {
+        
+        switch self {
+        case .get:
+            return nil
+        case .post(let postData):
+            return postData
+        }
+    }
+    
+    func getMethodType() -> String
+        {
+            switch self {
+            case .get:
+                return "GET"
+            case .post(_):
+                return "POST"
+            }
+        }
+    
+    
+}
+
 enum SchemeType: String {
     
     case http = "http"
     case https = "https"
+}
+
+enum Enviornment: String {
+    
+    case stagingHost = "staging_fakestoreapi.com"
+    case prodHost = "fakestoreapi.com"
+    case uatHost = "uat_fakestoreapi.com"
 }
 
 
@@ -28,7 +62,7 @@ struct EndPoint {
     
     private init() {
         
-        self.host = "fakestoreapi.com"
+        self.host = Enviornment.prodHost.rawValue
         self.scheme = SchemeType.https
     }
     
@@ -40,6 +74,15 @@ struct EndPoint {
         self.queryParam = param
         
     }
+    
+    init(withScheme scheme: SchemeType = SchemeType.https, withHost host: String = "fakestoreapi.com", withPath path: String, andQueryParam param: [String: String]? = nil) {
+        
+        self.scheme = scheme
+        self.host = host
+        self.path = path
+        self.queryParam = param
+    }
+    
 }
 
 
