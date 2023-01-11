@@ -8,10 +8,6 @@
 import Foundation
 
 
-struct Product: Decodable {
-    
-    
-}
 
 
 class ProductService : HttpClientProtocol {
@@ -23,7 +19,7 @@ class ProductService : HttpClientProtocol {
         
         let req = self.makeRequest(withUrl: productUrl, withHeaderDictionary: nil, andMethod: .get)
         
-        self.fetch(withUrlRequest: req, withType: Product.self) { result in
+        self.fetch(withUrlRequest: req, withType: ProductResponse.self) { result in
             
             switch result {
                 

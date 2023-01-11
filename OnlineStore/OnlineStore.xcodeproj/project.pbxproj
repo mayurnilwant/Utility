@@ -14,6 +14,7 @@
 		E6D5C3A4296ED74300BFDAE7 /* UrlConponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D5C3A3296ED74300BFDAE7 /* UrlConponent.swift */; };
 		E6D5C3A6296EE14E00BFDAE7 /* HttpClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D5C3A5296EE14E00BFDAE7 /* HttpClientManager.swift */; };
 		E6D5C3A9296EEE7E00BFDAE7 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D5C3A8296EEE7E00BFDAE7 /* ProductService.swift */; };
+		E6D5C3B1296EF83E00BFDAE7 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D5C3B0296EF83E00BFDAE7 /* ProductModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		E6D5C3A3296ED74300BFDAE7 /* UrlConponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlConponent.swift; sourceTree = "<group>"; };
 		E6D5C3A5296EE14E00BFDAE7 /* HttpClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientManager.swift; sourceTree = "<group>"; };
 		E6D5C3A8296EEE7E00BFDAE7 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		E6D5C3B0296EF83E00BFDAE7 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,7 @@
 		E6D5C38F296ED44200BFDAE7 /* OnlineStore */ = {
 			isa = PBXGroup;
 			children = (
-				E6D5C3A7296EEE6700BFDAE7 /* HttpServices */,
+				E6D5C3AA296EF7FB00BFDAE7 /* Features */,
 				E6D5C3A2296ED73100BFDAE7 /* Extensions */,
 				E6D5C39F296ED46B00BFDAE7 /* HttpLib */,
 				E6D5C39E296ED45700BFDAE7 /* Application */,
@@ -100,12 +102,37 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		E6D5C3A7296EEE6700BFDAE7 /* HttpServices */ = {
+		E6D5C3AA296EF7FB00BFDAE7 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				E6D5C3AB296EF80700BFDAE7 /* Products */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		E6D5C3AB296EF80700BFDAE7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E6D5C3AD296EF82400BFDAE7 /* Models */,
+				E6D5C3AC296EF81A00BFDAE7 /* Service */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		E6D5C3AC296EF81A00BFDAE7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				E6D5C3A8296EEE7E00BFDAE7 /* ProductService.swift */,
 			);
-			path = HttpServices;
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E6D5C3AD296EF82400BFDAE7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E6D5C3B0296EF83E00BFDAE7 /* ProductModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6D5C3A6296EE14E00BFDAE7 /* HttpClientManager.swift in Sources */,
+				E6D5C3B1296EF83E00BFDAE7 /* ProductModel.swift in Sources */,
 				E6D5C3A4296ED74300BFDAE7 /* UrlConponent.swift in Sources */,
 				E6D5C3A1296ED47E00BFDAE7 /* EndPoint.swift in Sources */,
 				E6D5C391296ED44200BFDAE7 /* OnlineStoreApp.swift in Sources */,

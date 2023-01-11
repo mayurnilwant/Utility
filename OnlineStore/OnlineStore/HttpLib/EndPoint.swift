@@ -97,6 +97,7 @@ extension EndPoint {
         guard let productUrl = component.url else {
             return nil
         }
+        print("\(productUrl)")
         return productUrl
     }
     

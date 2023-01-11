@@ -63,6 +63,8 @@ extension HttpClientProtocol {
                 if (200...299).contains(_response.statusCode) {
                     if let responseData = responseData {
                         
+                        
+                        print("Data: \(String(describing: String(data: responseData, encoding: .utf8)))")
                         let _responseModel = try? JSONDecoder().decode(type.self, from: responseData) as T
                         if let _responseModel = _responseModel {
                             callBack(.success(_responseModel))
