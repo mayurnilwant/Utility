@@ -8,6 +8,23 @@
 import Foundation
 
 
+enum ProductRequestEnum: Equatable {
+    
+    case all
+    case forId(Int)
+    
+    func getProductId() -> String? {
+        
+        switch self {
+        case .all:
+            return nil
+        case .forId(let identifier):
+            return "\(identifier)"
+        }
+    }
+}
+
+
 enum HttpMethod {
     case get
     case post(Data)
@@ -88,17 +105,20 @@ struct EndPoint {
 
 
 extension EndPoint {
+
     
-    static var allProducts: URL? {
-        
-        let productsEndPoint = EndPoint(withPath: "/products")
+  static func getProduct(for type: ProductRequestEnum) -> URL? {
+    
+      var path = ""
+      if let productId = type.getProductId() {
+             path = "/products/\(productId)"
+      }else {
+          path = "/products"
+      }
+        let productsEndPoint = EndPoint(withPath: path)
         let component = URLComponents(withEndPoint: productsEndPoint)
+        return component.url
         
-        guard let productUrl = component.url else {
-            return nil
-        }
-        print("\(productUrl)")
-        return productUrl
     }
     
 }

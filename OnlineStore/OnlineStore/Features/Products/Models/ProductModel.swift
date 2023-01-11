@@ -17,6 +17,7 @@ enum ProductCategory: String {
         self = ProductCategory(rawValue: value) ?? .men
         
     }
+    
 }
 
 struct Product : Decodable {
@@ -29,7 +30,6 @@ struct Product : Decodable {
     let category: ProductCategory?
     
     
-    
     enum CodingKeys: String, CodingKey {
         
         case title = "title"
@@ -39,6 +39,15 @@ struct Product : Decodable {
         case imageLocation = "image"
         case identifier = "id"
         
+    }
+    
+    init() {
+        self.identifier = nil
+        self.price = nil
+        self.title = nil
+        self.category = nil
+        self.description = nil
+        self.imageLocation = nil
     }
     
     init(from decoder: Decoder) throws {
@@ -64,6 +73,5 @@ struct ProductResponse: Decodable {
         
         let container = try? decoder.singleValueContainer()
         self.products = try? container?.decode([Product].self)
-        print("")
     }
 }

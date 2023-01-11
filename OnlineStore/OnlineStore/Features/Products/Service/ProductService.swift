@@ -8,32 +8,70 @@
 import Foundation
 
 
+//protocol erv {
+//
+//    associatedtype resource
+//    func getResource() -> resource
+//}
 
 
-class ProductService : HttpClientProtocol {
+protocol ServiceProtocol {
+    
+    associatedtype Resource
+    
+    func getAllResource() async throws -> [Resource]
+    func getResourceby(id identifier: Int) -> Resource
+    
+}
+
+
+class ProductService : HttpClientProtocol, ServiceProtocol {
     
     
-    func getProducts() {
+    typealias Resource = Product
+    
+    func getAllResource() async throws -> [Product] {
         
-        let productUrl = EndPoint.allProducts
+        self.getProducts(for: ProductRequestEnum.all, andType: ProductResponse.self)
         
-        let req = self.makeRequest(withUrl: productUrl, withHeaderDictionary: nil, andMethod: .get)
+        return [Product]()
+    }
+    
+    func getResourceby(id identifier: Int) -> Product {
         
-        self.fetch(withUrlRequest: req, withType: ProductResponse.self) { result in
+        self.getProducts(for: ProductRequestEnum.forId(identifier), andType: Product.self)
+        
+        return Product()
+        
+        
+    }
+    
+    
+    
+    func getProducts<T: Decodable>(for type: ProductRequestEnum, andType modelType: T.Type) {
+        let urlProduct = EndPoint.getProduct(for: type)
+        let req = self.makeRequest(withUrl: urlProduct, withHeaderDictionary: nil, andMethod: .get)
+        
+        self.fetch(withUrlRequest: req, withType: modelType.self) { result in
             
             switch result {
                 
             case .success(let model):
                 do {
                 
+                    print(model.debugDescription)
             }
             case .failure(let error) :
                 do {
-                    
+                    print(error.debugDescription)
                 }
                 
             }
         }
+        
+        
     }
+    
+    
 
 }
