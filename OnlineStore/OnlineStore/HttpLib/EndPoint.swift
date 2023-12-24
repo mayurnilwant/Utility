@@ -8,6 +8,32 @@
 import Foundation
 
 
+//struct User {
+//    let firstname: String
+//    let lastName : String
+//    var birthday : Date?
+//
+//    private func isValid() -> Bool {
+//
+//        let numbers: [Int] = [1000, 5670, -1, 42, 21341123, 9223372036833434684]
+//        let average = numbers.reduce(0, +)/numbers.count
+//        return false
+//    }
+//}
+
+
+struct User {
+    let firstname: String
+    let lastName : String
+    var birthday : Date?
+    
+     func isValid() -> Bool {
+        return firstname == "max"
+    }
+}
+
+
+
 enum ProductRequestEnum: Equatable {
     
     case all
@@ -30,6 +56,9 @@ enum HttpMethod {
     case post(Data)
     
     func getPostDat() -> Data? {
+        
+        let testUser = User(firstname: "max", lastName: nil, birthday: nil)
+        assert(testUser.isValid(), "fjdsfjk;")
         
         switch self {
         case .get:
