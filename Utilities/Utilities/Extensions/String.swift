@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum StringValidationType {
     case validateForNil
@@ -16,19 +17,13 @@ enum StringValidationType {
 
 extension String {
     
-    func validate(forValidator validator: StringValidationType) -> Bool {
-        switch validator {
-        case .validateForNil:
-            do {
-                
-                return self.isEmpty
-            }
-        case .emailValidation:
-            return true
-        case .specialCharacterValidation:
-            return false
-        }
-    }
 }
+
+
+protocol FormValidatorProtocol {
+    
+    func validate(string: String)
+}
+
 
 
