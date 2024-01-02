@@ -57,7 +57,6 @@
 		E6F7413A2B40B004004EDD3C = {
 			isa = PBXGroup;
 			children = (
-				E6D698672B44CAC20085A54D /* App Delegate */,
 				E6F741452B40B004004EDD3C /* Recipes */,
 				E6F741442B40B004004EDD3C /* Products */,
 			);
@@ -74,6 +73,7 @@
 		E6F741452B40B004004EDD3C /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
+				E6D698672B44CAC20085A54D /* App Delegate */,
 				E6F7415F2B43BDBC004EDD3C /* Recipe Module */,
 				E6F7415A2B41316E004EDD3C /* HttpLibrary */,
 				E6F7414A2B40B004004EDD3C /* ViewController.swift */,
