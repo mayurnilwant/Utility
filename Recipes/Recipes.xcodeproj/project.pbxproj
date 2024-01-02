@@ -45,9 +45,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E6D698672B44CAC20085A54D /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				E6F741462B40B004004EDD3C /* AppDelegate.swift */,
+				E6F741482B40B004004EDD3C /* SceneDelegate.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
 		E6F7413A2B40B004004EDD3C = {
 			isa = PBXGroup;
 			children = (
+				E6D698672B44CAC20085A54D /* App Delegate */,
 				E6F741452B40B004004EDD3C /* Recipes */,
 				E6F741442B40B004004EDD3C /* Products */,
 			);
@@ -66,8 +76,6 @@
 			children = (
 				E6F7415F2B43BDBC004EDD3C /* Recipe Module */,
 				E6F7415A2B41316E004EDD3C /* HttpLibrary */,
-				E6F741462B40B004004EDD3C /* AppDelegate.swift */,
-				E6F741482B40B004004EDD3C /* SceneDelegate.swift */,
 				E6F7414A2B40B004004EDD3C /* ViewController.swift */,
 				E6F7414C2B40B004004EDD3C /* Main.storyboard */,
 				E6F7414F2B40B005004EDD3C /* Assets.xcassets */,
