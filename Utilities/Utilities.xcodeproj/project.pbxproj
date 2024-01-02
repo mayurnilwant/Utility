@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E6EE2EF52B37E51100637291 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EE2EF42B37E51100637291 /* Utilities.swift */; };
 		E6EE2EFD2B37E55400637291 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EE2EFC2B37E55400637291 /* Array.swift */; };
-		E6EE2EFF2B37E91300637291 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EE2EFE2B37E91300637291 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,7 +27,6 @@
 		E6EE2EF12B37E51100637291 /* libUtilities.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUtilities.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6EE2EF42B37E51100637291 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		E6EE2EFC2B37E55400637291 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		E6EE2EFE2B37E91300637291 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				E6EE2EFC2B37E55400637291 /* Array.swift */,
-				E6EE2EFE2B37E91300637291 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -134,7 +131,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6EE2EFF2B37E91300637291 /* String.swift in Sources */,
 				E6EE2EF52B37E51100637291 /* Utilities.swift in Sources */,
 				E6EE2EFD2B37E55400637291 /* Array.swift in Sources */,
 			);

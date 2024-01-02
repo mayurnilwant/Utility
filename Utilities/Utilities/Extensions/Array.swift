@@ -21,5 +21,27 @@ extension Array {
 }
 
 
+extension Optional where Wrapped: StringProtocol {
+    func safeExtract() -> Wrapped? {
+        guard let val = self else {
+            return ""
+        }
+        return val
+    }
+}
 
+
+extension Array where Element : Comparable {
+    
+    func allEqual() -> Bool {
+        
+        for item in self {
+            
+            if self.first != item {
+                return false
+            }
+        }
+        return true
+    }
+}
 
