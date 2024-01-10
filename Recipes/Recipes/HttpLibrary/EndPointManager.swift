@@ -24,7 +24,7 @@ enum ApiResult <T, Error> {
 }
 
 
-typealias APIResultCallback<T> = (ApiResult<T, Error>) -> Void
+typealias APIResultCallback<T> = (ApiResult<T, ApiError>) -> Void
 
 enum HttpOperation {
     
