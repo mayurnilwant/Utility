@@ -42,15 +42,11 @@ struct MNButtonView: View {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(.blue, lineWidth: 2)
                 }
-
-                
             }
-        
         case .buttonWIthImageAndTitle(let title,let imageName, _ ):
             do {
                 
                 Button {
-                    
                 } label: {
                     HStack {
                         Image(systemName: imageName)
@@ -63,7 +59,6 @@ struct MNButtonView: View {
                         .stroke(.blue, lineWidth: CGFloat(2))
                 }
             }
-            
         case .circularButtonWithImage(let _imgName):
             do {
                 Button {
@@ -94,42 +89,3 @@ struct ButtonView_Previews: PreviewProvider {
 }
 
 
-struct ButtonView : View {
-    
-                    
-            var title: String
-            var borderColor: Color
-            var strokeWidth: Float
-            var cornerRadius: Float
-            var imageName: String?
-    
-            var callBack : () -> Void
-            
-    init(withTitle title: String,andImageName iName: String? = nil, andColor bColor: Color, andStrokeWidth width: Float, andCornerRedius radius: Float, andCallback callBack: @escaping ()-> Void) {
-                self.strokeWidth = width
-                self.title = title
-                self.borderColor = bColor
-                self.cornerRadius = radius
-                self.callBack = callBack
-            if iName != nil {
-                self.imageName = iName
-                }
-                
-            }
-    
-                
-            var body: some View {
-                Button(self.title) {
-                    
-                    self.callBack()
-                    
-            }
-                .padding()
-                .overlay {
-                    
-                    RoundedRectangle(cornerRadius: CGFloat(self.cornerRadius))
-                        .stroke(.blue, lineWidth: CGFloat(self.strokeWidth))
-                }
-            }
-            
-        }
